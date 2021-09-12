@@ -63,4 +63,16 @@ public class RectangleTest {
 
         Assert.assertEquals(1.0, rectangle.getSquare(), 0.01);
     }
+
+    @Test(expected = WrongParameterException.class)
+    public void test006_rectangleSquareTest_whenOnOneLine() throws WrongParameterException {
+        AbstractFigure.Point2D[] points = new AbstractFigure.Point2D[4];
+
+        points[0] = new AbstractFigure.Point2D(1.0, 1.0);
+        points[1] = new AbstractFigure.Point2D(2.0, 2.0);
+        points[2] = new AbstractFigure.Point2D(3.0, 3.0);
+        points[3] = new AbstractFigure.Point2D(4.0, 4.0);
+
+        Rectangle rectangle = new Rectangle(points);
+    }
 }

@@ -7,7 +7,7 @@ import utils.WrongParameterException;
  * Обход вершин по часовой стрелке.
  * */
 public class Square extends Rectangle {
-    public Square(Point2D[] points) throws WrongParameterException {
+    public Square(Point2D[] points) throws NullPointerException, WrongParameterException {
         super(points);
 
         if (!isSquare(points)) {
