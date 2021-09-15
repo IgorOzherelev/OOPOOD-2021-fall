@@ -1,5 +1,6 @@
 import figures.AbstractFigure;
 import figures.Polygon;
+import org.junit.Assert;
 import org.junit.Test;
 import utils.WrongParameterException;
 
@@ -54,5 +55,18 @@ public class PolygonTest {
         points[2] = new AbstractFigure.Point2D(3.0, 2.0);
 
         Polygon polygon = new Polygon(3, points);
+    }
+
+    @Test
+    public void test006_polygonTest_squareTest_positive() throws WrongParameterException {
+        AbstractFigure.Point2D[] points = new AbstractFigure.Point2D[3];
+
+        points[0] = new AbstractFigure.Point2D(1.0, 1.0);
+        points[1] = new AbstractFigure.Point2D(1.0, 2.0);
+        points[2] = new AbstractFigure.Point2D(3.0, 2.0);
+
+        Polygon polygon = new Polygon(3, points);
+
+        Assert.assertEquals(1.0, polygon.getSquare(), 0.01);
     }
 }
