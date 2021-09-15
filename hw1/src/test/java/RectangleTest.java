@@ -6,6 +6,7 @@ import utils.WrongParameterException;
 
 
 public class RectangleTest {
+
     @Test(expected = NullPointerException.class)
     public void test001_rectangleInitTest_whenNullPoints() throws WrongParameterException {
         AbstractFigure.Point2D[] points = new AbstractFigure.Point2D[4];

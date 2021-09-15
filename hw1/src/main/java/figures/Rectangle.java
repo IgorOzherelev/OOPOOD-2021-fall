@@ -7,7 +7,7 @@ import utils.WrongParameterException;
  * Обход вершин по часовой стрелке.
  * */
 public class Rectangle extends Polygon {
-    public Rectangle(Point2D[] points) throws WrongParameterException {
+    public Rectangle(Point2D[] points) throws NullPointerException, WrongParameterException {
         super(4, points);
 
         if (!isRectangle(points)) {

@@ -10,8 +10,14 @@ public class Polygon extends AbstractFigure {
     protected final Point2D[] points;
 
     public Polygon(int pointsNum, Point2D[] points) throws NullPointerException, WrongParameterException {
-        if (pointsNum == 0 || pointsNum != points.length) {
+        if (pointsNum <= 2 || pointsNum != points.length) {
             throw new WrongParameterException("Incorrect arguments passed for polygon constructing");
+        }
+
+        for (Point2D point : points) {
+            if (point == null) {
+                throw new NullPointerException("Null point");
+            }
         }
 
         this.pointsNum = pointsNum;
